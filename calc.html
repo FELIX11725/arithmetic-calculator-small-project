@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Basic Arithmentic Calculator</title>
+    <style>
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="number"], select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #ff7e5f;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff7e5f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #feb47b;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #ff7e5f;
+    transform: translateY(1px);
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: #555;
+    margin: 10px 0;
+}
+
+
+    </style>
+  </head>
+  <body>
+  <body>
+    <div class="container">
+    <h1>Arithmetic Calculator</h1>
+
+    <form method="post" action="arithmetic.php">
+        <input type="number" name="num1" step="any" placeholder="Enter first number" required>
+        <select name="operation" required>
+            <option value="">Select operation</option>
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+        <input type="number" name="num2" step="any" placeholder="Enter second number" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <h2>Result:</h2>
+    <input type="number" id="result" readonly>
+
+    </div>
+ 
+
+    <script lang="PHP">
+        const urlParams = new URLSearchParams(window.location.search);
+        const result = urlParams.get('result');
+        if (result!== null){
+            document.getElementById('result').value=result;
+        }
+    </script>
+
+   
+</body>
+
+
+  </body>
+</html>
